@@ -91,7 +91,7 @@ nav a:hover { color: #fff; }
 .display-line-with-shortcut { display: flex; align-items: center; gap: clamp(18px, 2.5vw, 42px); flex-wrap: wrap; }
 .display-line-with-shortcut .shortcut { transform: translateY(4px); }
 .shortcut { display: flex; gap: 9px; }
-kbd { width: 62px; min-width: 62px; height: 62px; padding: 0; display: flex; align-items: center; justify-content: center; border: 1px solid #c9cbc3; border-bottom-width: 4px; border-radius: 12px; background: #e8e8e2; font: 22px/1 var(--font-geist), sans-serif; text-align: center; box-shadow: 0 10px 22px rgba(0,0,0,.07); transition: transform 160ms ease, border-bottom-width 160ms ease; }
+kbd { width: 62px; min-width: 62px; height: 62px; padding: 0; display: flex; align-items: center; justify-content: center; border: 1px solid #c9cbc3; border-bottom-width: 4px; border-radius: 12px; background: #e8e8e2; font: 22px/1 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif; text-align: center; box-shadow: 0 10px 22px rgba(0,0,0,.07); transition: transform 160ms ease, border-bottom-width 160ms ease; }
 kbd > span { width: 100%; display: flex; align-items: center; justify-content: center; text-align: center; }
 .shortcut:hover kbd { transform: translateY(2px); border-bottom-width: 2px; }
 
