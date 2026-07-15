@@ -79,7 +79,13 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="InsomniMac home">
-          <span className="wordmark-dot" />
+          <Image
+            className="wordmark-icon"
+            src="/insomnimac-icon.png"
+            alt=""
+            width={32}
+            height={32}
+          />
           InsomniMac
         </a>
         <nav aria-label="Primary navigation">
@@ -93,7 +99,6 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow hero-enter delay-one">Remote access, without the surprise disconnect</p>
           <h1 className="hero-enter delay-two">Keep your Mac reachable.</h1>
           <p className="hero-intro hero-enter delay-three">
             InsomniMac prevents sleep so remote-control agents<br />{" "}stay connected when you step away.
@@ -115,10 +120,10 @@ export default function Home() {
 
         <div className="hero-art hero-enter delay-three">
           <Image
-            className="app-icon"
-            src="/insomnimac-icon.png"
-            alt="InsomniMac app icon: a cheerful Mac beside a warm cup"
-            width={1024}
+            className="hero-visual"
+            src="/insomnimac-hero-transparent.png"
+            alt="An awake Mac connected by a blue line to a remote-control cursor, secured by Awake Lock"
+            width={1536}
             height={1024}
             priority
           />
