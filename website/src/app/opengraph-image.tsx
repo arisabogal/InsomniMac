@@ -27,8 +27,8 @@ export default function Image() {
               width: 18,
               height: 18,
               borderRadius: 99,
-              background: "#b7f34a",
-              boxShadow: "0 0 30px #b7f34a",
+              background: "#5b8cff",
+              boxShadow: "0 0 30px #5b8cff",
             }}
           />
           InsomniMac

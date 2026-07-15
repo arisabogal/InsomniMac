@@ -18,18 +18,40 @@ function GitHubIcon() {
   );
 }
 
+function Shortcut({ className = "" }: { className?: string }) {
+  return (
+    <div className={`shortcut ${className}`.trim()} aria-label="Default keyboard shortcut Command Shift Backslash">
+      <kbd>⌘</kbd><kbd>⇧</kbd><kbd>{"\\"}</kbd>
+    </div>
+  );
+}
+
+function LockIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4.75 6V4.8a3.25 3.25 0 0 1 6.5 0V6h.35c.77 0 1.4.63 1.4 1.4v5.2c0 .77-.63 1.4-1.4 1.4H4.4A1.4 1.4 0 0 1 3 12.6V7.4C3 6.63 3.63 6 4.4 6h.35Zm1.5 0h3.5V4.8a1.75 1.75 0 1 0-3.5 0V6Z" />
+    </svg>
+  );
+}
+
 function MenuPreview() {
   return (
-    <div className="menu-scene" aria-label="Preview of the InsomniMac menu bar app">
-      <div className="orbit orbit-one" />
-      <div className="orbit orbit-two" />
+    <div className="menu-preview" aria-label="Preview of the InsomniMac menu bar app">
       <div className="menubar">
-        <span className="apple">●</span>
-        <span>Finder</span>
-        <span>File</span>
+        <div className="menubar-left">
+          <span className="apple-mark" aria-hidden="true">●</span>
+          <strong>Finder</strong>
+          <span>File</span>
+          <span>Edit</span>
+          <span>View</span>
+          <span>Go</span>
+          <span>Window</span>
+          <span>Help</span>
+        </div>
         <div className="menubar-right">
-          <span className="active-lock" aria-hidden="true">▣</span>
-          <span>Tue Jul 14&nbsp;&nbsp;11:48 PM</span>
+          <span className="system-icon" aria-hidden="true">◖</span>
+          <span className="active-lock"><LockIcon /></span>
+          <span>Wed Jul 15&nbsp;&nbsp;12:34 AM</span>
         </div>
       </div>
       <div className="status-menu">
@@ -37,15 +59,17 @@ function MenuPreview() {
           <span className="live-dot" />
           Awake Lock Active
         </div>
-        <div className="menu-meta">Hotkey: ⌘ ⇧ L</div>
+        <div className="menu-meta">Hotkey: ⌘ ⇧ {"\\"}</div>
         <div className="menu-rule" />
-        <div className="menu-row">Exit Awake Lock <span>⌘⇧L</span></div>
+        <div className="menu-row">Exit Awake Lock <span>⌘⇧{"\\"}</span></div>
         <div className="menu-row">Set Shortcut</div>
         <div className="menu-row check"><span>✓</span> Open at Login</div>
         <div className="menu-row check"><span>✓</span> Show Overlay When Active</div>
+        <div className="menu-row check"><span /> Prevent Sleep When Lid Closes</div>
         <div className="menu-row check"><span>✓</span> Share Remote Mode with Agents</div>
+        <div className="menu-rule" />
+        <div className="menu-row">Quit InsomniMac</div>
       </div>
-      <p className="scene-note">Your Mac is staying awake.</p>
     </div>
   );
 }
@@ -68,13 +92,16 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
-        <div className="hero-glow" />
         <div className="hero-copy">
           <p className="eyebrow hero-enter delay-one">Remote access, without the surprise disconnect</p>
           <h1 className="hero-enter delay-two">Keep your Mac reachable.</h1>
           <p className="hero-intro hero-enter delay-three">
-            InsomniMac prevents sleep so remote-control agents<br />stay connected when you step away.
+            InsomniMac prevents sleep so remote-control agents<br />{" "}stay connected when you step away.
           </p>
+          <div className="hero-shortcut hero-enter delay-four">
+            <span>Default shortcut</span>
+            <Shortcut />
+          </div>
           <div className="hero-actions hero-enter delay-four">
             <a className="button button-primary" href="/downloads/InsomniMac.zip" download>
               Download for Mac <ArrowIcon />
@@ -87,7 +114,6 @@ export default function Home() {
         </div>
 
         <div className="hero-art hero-enter delay-three">
-          <div className="icon-halo" />
           <Image
             className="app-icon"
             src="/insomnimac-icon.png"
@@ -96,24 +122,18 @@ export default function Home() {
             height={1024}
             priority
           />
-          <div className="awake-badge"><span /> Awake lock active</div>
         </div>
-
-        <a className="scroll-cue" href="#how" aria-label="Scroll to learn how it works">
-          <span>See how it stays online</span>
-          <span className="scroll-line" />
-        </a>
       </section>
 
       <section className="how" id="how">
         <div className="section-number">01 / HOW IT WORKS</div>
         <div className="how-copy">
-          <p className="display-line">Turn on Awake Lock.</p>
+          <div className="display-line display-line-with-shortcut">
+            <span>Turn on Awake Lock.</span>
+            <Shortcut />
+          </div>
           <p className="display-line muted">Step away from your desk.</p>
           <p className="display-line">Your agent stays connected.</p>
-        </div>
-        <div className="shortcut" aria-label="Default keyboard shortcut Command Shift L">
-          <kbd>⌘</kbd><kbd>⇧</kbd><kbd>L</kbd>
         </div>
       </section>
 
@@ -138,7 +158,7 @@ export default function Home() {
         <div className="feature-row">
           <p className="feature-index">B</p>
           <h3>Agent-aware remote mode</h3>
-          <p>Tell supported coding agents you are away, so they send screenshots or recordings when useful.</p>
+          <p>When Remote Mode is active, supported agents know you are already away and can send screenshots or recordings when useful.</p>
         </div>
         <div className="feature-row">
           <p className="feature-index">C</p>
