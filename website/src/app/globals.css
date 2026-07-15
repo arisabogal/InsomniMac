@@ -68,6 +68,8 @@ nav a:hover { color: #fff; }
 .button { min-height: 51px; padding: 0 21px; border-radius: 99px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-size: 14px; font-weight: 620; transition: transform 200ms ease, background 200ms ease, border-color 200ms ease; }
 .button svg, .text-link svg { width: 16px; height: 16px; }
 .button:hover { transform: translateY(-2px); }
+.hero .button { transition: background 200ms ease, border-color 200ms ease; }
+.hero .button:hover { transform: none; }
 .button-primary { background: var(--accent); color: white; }
 .button-primary:hover { background: var(--accent-bright); }
 .button-secondary { border: 1px solid rgba(255,255,255,.22); color: #e3e4dd; }
