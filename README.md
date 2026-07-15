@@ -6,7 +6,7 @@ Use a global keyboard shortcut to toggle Awake Lock, show an optional full-scree
 
 ## Download
 
-Download the latest packaged build from the [InsomniMac website](https://v0-insomnimac-landing-page-dd7dfkoo5-arisabogals-projects.vercel.app). The current universal build supports Intel and Apple silicon Macs running macOS 26.2 or later.
+Download the latest packaged build from the [InsomniMac website](https://v0-insomnimac-landing-page.vercel.app). The current universal build supports Intel and Apple silicon Macs running macOS 26.2 or later.
 
 ## Development
 
