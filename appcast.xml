@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>InsomniMac</title>
+        <item>
+            <title>1.0</title>
+            <pubDate>Wed, 15 Jul 2026 01:37:30 -0700</pubDate>
+            <link>https://insomnimac.vercel.app</link>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.2</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[# InsomniMac 1.0
+
+The first public release of InsomniMac, a small menu bar utility that keeps a Mac reachable while remote-control agents are working.
+
+## Highlights
+
+- Toggle Awake Lock from the menu bar or with `Command-Shift-Backslash`.
+- Keep the Mac available for remote-control agents while you are away.
+- Optionally show the animated awake overlay while the lock is active.
+- Launch automatically at login and optionally prevent sleep with the lid closed.
+- Share Remote Mode context with supported agents.
+- Automatically check for, securely verify, and install future updates.
+
+InsomniMac is free, open source, and MIT licensed.
+]]></description>
+            <enclosure url="https://github.com/arisabogal/InsomniMac/releases/download/v1.0/InsomniMac-v1.0.zip" length="2605606" type="application/octet-stream" sparkle:edSignature="8OArfQbST7g/HrTrZHSNK30544/paC02f395cnaApvI7krnhDoTckVkFreyblbTnJPN5JRCSftxh3GEGzuVTAg=="/>
+        </item>
+    </channel>
+</rss>

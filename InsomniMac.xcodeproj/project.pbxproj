@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A10000012F90000100000001 /* Sparkle.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10000042F90000100000001 /* Sparkle.xcframework */; };
+		A10000052F90000100000001 /* Sparkle.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A10000042F90000100000001 /* Sparkle.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		DB024BB72F7B1B0600B6D7B4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,10 +29,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A10000042F90000100000001 /* Sparkle.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Vendor/Sparkle.xcframework; sourceTree = SOURCE_ROOT; };
 		DB024BA92F7B1B0400B6D7B4 /* InsomniMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InsomniMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB024BB62F7B1B0600B6D7B4 /* InsomniMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InsomniMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB024BC02F7B1B0600B6D7B4 /* InsomniMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InsomniMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A10000062F90000100000001 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A10000052F90000100000001 /* Sparkle.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		DB024BAB2F7B1B0400B6D7B4 /* InsomniMac */ = {
@@ -52,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10000012F90000100000001 /* Sparkle.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +96,7 @@
 		DB024BA02F7B1B0400B6D7B4 = {
 			isa = PBXGroup;
 			children = (
+				A10000042F90000100000001 /* Sparkle.xcframework */,
 				DB024BAB2F7B1B0400B6D7B4 /* InsomniMac */,
 				DB024BB92F7B1B0600B6D7B4 /* InsomniMacTests */,
 				DB024BC32F7B1B0600B6D7B4 /* InsomniMacUITests */,
@@ -102,6 +124,7 @@
 				DB024BA52F7B1B0400B6D7B4 /* Sources */,
 				DB024BA62F7B1B0400B6D7B4 /* Frameworks */,
 				DB024BA72F7B1B0400B6D7B4 /* Resources */,
+				A10000062F90000100000001 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -403,9 +426,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = NO;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Config/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -438,9 +460,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = NO;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Config/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -578,6 +599,7 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
 	};
 	rootObject = DB024BA12F7B1B0400B6D7B4 /* Project object */;
 }

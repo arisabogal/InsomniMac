@@ -5,10 +5,13 @@
 //  Created by Codex on 3/30/26.
 //
 
+import Combine
+import Sparkle
 import SwiftUI
 
 struct StatusMenuView: View {
     @ObservedObject var controller: AwakeLockController
+    let updater: SPUUpdater
 
     var body: some View {
         Text(controller.isActive ? "Awake Lock Active" : "Awake Lock Inactive")
@@ -77,8 +80,27 @@ struct StatusMenuView: View {
 
         Divider()
 
+        CheckForUpdatesButton(updater: updater)
+
+        Divider()
+
         Button("Quit InsomniMac") {
             controller.quit()
+        }
+    }
+}
+
+private struct CheckForUpdatesButton: View {
+    let updater: SPUUpdater
+    @State private var canCheckForUpdates = false
+
+    var body: some View {
+        Button("Check for Updates…") {
+            updater.checkForUpdates()
+        }
+        .disabled(!canCheckForUpdates)
+        .onReceive(updater.publisher(for: \.canCheckForUpdates)) { canCheckForUpdates in
+            self.canCheckForUpdates = canCheckForUpdates
         }
     }
 }

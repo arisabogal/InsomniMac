@@ -6,9 +6,16 @@
 //
 
 import AppKit
+import Sparkle
 import SwiftUI
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
+    let updaterController = SPUStandardUpdaterController(
+        startingUpdater: true,
+        updaterDelegate: nil,
+        userDriverDelegate: nil
+    )
+
     func applicationDidFinishLaunching(_ notification: Notification) {
         NSApp.setActivationPolicy(.accessory)
     }
@@ -21,7 +28,10 @@ struct InsomniMacApp: App {
 
     var body: some Scene {
         MenuBarExtra {
-            StatusMenuView(controller: awakeLockController)
+            StatusMenuView(
+                controller: awakeLockController,
+                updater: appDelegate.updaterController.updater
+            )
         } label: {
             Image(systemName: awakeLockController.isActive ? "lock.fill" : "lock.open.fill")
                 .accessibilityLabel(
