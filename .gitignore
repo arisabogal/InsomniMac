@@ -1,0 +1,6 @@
+DerivedData/
+artifacts/
+.DS_Store
+website/.next/
+website/node_modules/
+website/.vercel/
