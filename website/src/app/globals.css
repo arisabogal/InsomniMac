@@ -100,26 +100,37 @@ kbd > span { width: 100%; display: flex; align-items: center; justify-content: c
 .product-proof { min-height: 920px; padding: 130px clamp(24px, 8vw, 140px); display: grid; grid-template-columns: .75fr 1.25fr; gap: 8vw; align-items: center; overflow: hidden; }
 .proof-copy h2 { margin: 28px 0 28px; font-size: clamp(48px, 6vw, 94px); line-height: .93; letter-spacing: -.065em; font-weight: 520; }
 .proof-copy > p { max-width: 420px; color: var(--muted); font-size: 18px; line-height: 1.6; letter-spacing: -.02em; }
-.menu-preview { position: relative; height: 500px; width: min(100%, 760px); justify-self: end; }
-.menubar { height: 30px; padding: 0 11px; display: flex; align-items: center; background: rgba(238,239,241,.96); color: #181818; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; font-size: 11px; letter-spacing: -.005em; box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+.menu-preview { position: relative; height: 500px; width: min(100%, 760px); justify-self: end; touch-action: pan-y; }
+.menubar { height: 38px; padding: 0 16px; display: flex; align-items: center; border: 1px solid rgba(177,196,226,.2); border-radius: 999px; background: rgba(255,255,255,.018); color: #e7ebf3; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; font-size: 11px; letter-spacing: -.005em; box-shadow: 0 0 0 1px rgba(91,140,255,.025), 0 12px 34px rgba(0,0,0,.16); }
 .menubar-left, .menubar-right { display: flex; align-items: center; gap: 15px; white-space: nowrap; }
 .menubar-left strong { font-weight: 650; }
 .apple-mark { width: 12px; font-size: 9px; text-align: center; }
 .menubar-right { margin-left: auto; gap: 13px; }
 .system-icon { font-size: 10px; transform: rotate(-18deg); }
-.active-lock { width: 16px; height: 16px; display: grid; place-items: center; color: var(--accent); }
-.active-lock svg { width: 13px; height: 13px; }
-.status-menu { position: absolute; top: 36px; right: 7px; width: 318px; padding: 6px; border: 1px solid rgba(255,255,255,.8); border-radius: 9px; background: rgba(240,240,241,.93); backdrop-filter: blur(28px) saturate(1.35); color: #161616; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; box-shadow: 0 18px 50px rgba(0,0,0,.38), 0 2px 9px rgba(0,0,0,.18); }
+.menubar-app-button { width: 20px; height: 20px; padding: 0; display: grid; place-items: center; border: 0; background: transparent; color: #a5adba; cursor: pointer; }
+.menubar-app-button svg { width: 13px; height: 13px; }
+.menubar-app-button.is-active { color: var(--accent); }
+.menubar-app-button:focus-visible, .menu-row:focus-visible, .demo-relaunch:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.status-menu { position: absolute; z-index: 3; top: 47px; right: 7px; width: 318px; padding: 7px; border: 1px solid rgba(177,196,226,.2); border-radius: 13px; background: rgba(9,10,13,.76); backdrop-filter: blur(26px) saturate(1.2); color: #edf1f8; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; box-shadow: 0 22px 54px rgba(0,0,0,.32), inset 0 1px rgba(255,255,255,.025); }
 .menu-status { min-height: 25px; padding: 4px 10px; display: flex; align-items: center; font-size: 13px; font-weight: 600; }
 .live-dot { display: inline-block; width: 6px; height: 6px; flex: 0 0 auto; border-radius: 50%; background: var(--accent); margin-right: 8px; box-shadow: 0 0 8px rgba(91,140,255,.6); }
-.menu-meta { padding: 0 10px 5px 24px; color: #717171; font-size: 11px; }
-.menu-rule { height: 1px; margin: 5px 0; background: rgba(0,0,0,.13); }
-.menu-row { min-height: 25px; padding: 3px 10px 3px 24px; display: flex; justify-content: space-between; align-items: center; border-radius: 5px; font-size: 13px; line-height: 1.2; }
-.menu-row > span:last-child { color: #737373; font-size: 11px; }
-.menu-row:hover { background: #3478f6; color: white; }
+.live-dot.is-inactive { background: #747b86; box-shadow: none; }
+.menu-meta { padding: 0 10px 5px 24px; color: #939baa; font-size: 11px; }
+.menu-rule { height: 1px; margin: 5px 0; background: rgba(177,196,226,.14); }
+.menu-row { width: 100%; min-height: 27px; padding: 4px 10px 4px 24px; display: flex; justify-content: space-between; align-items: center; border: 0; border-radius: 6px; background: transparent; color: inherit; font: 13px/1.2 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; text-align: left; cursor: pointer; }
+.menu-row > span:last-child { color: #8e97a6; font-size: 11px; }
+.menu-row:hover { background: rgba(91,140,255,.82); color: white; }
 .menu-row:hover > span:last-child { color: white; }
 .menu-row.check { position: relative; justify-content: flex-start; padding-left: 24px; }
 .menu-row.check > span:first-child { position: absolute; left: 8px; width: 12px; font-size: 12px; }
+.demo-relaunch { position: absolute; top: 54px; right: 8px; padding: 8px 12px; border: 1px solid rgba(177,196,226,.2); border-radius: 999px; background: transparent; color: #c7ceda; font: 11px -apple-system, BlinkMacSystemFont, sans-serif; cursor: pointer; }
+.awake-sprite { position: absolute; z-index: 4; left: 6%; bottom: 5%; width: 128px; height: 144px; display: flex; flex-direction: column; align-items: center; cursor: grab; touch-action: none; user-select: none; filter: drop-shadow(0 18px 24px rgba(0,0,0,.34)); animation: sprite-arrive 260ms ease-out both; }
+.awake-sprite.is-dragging { cursor: grabbing; }
+.awake-sprite:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 14px; }
+.awake-sprite-art { width: 112px; height: 112px; flex: 0 0 auto; background-image: url("/awake-sprite-sheet.png"); background-repeat: no-repeat; background-size: 400% 400%; pointer-events: none; }
+.sprite-shortcut { display: flex; gap: 3px; opacity: 0; transform: translateY(4px); transition: opacity 160ms ease, transform 160ms ease; }
+.awake-sprite:hover .sprite-shortcut, .awake-sprite.is-dragging .sprite-shortcut { opacity: 1; transform: translateY(0); }
+.sprite-shortcut span { min-width: 25px; padding: 4px 6px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.22); border-radius: 6px; background: #292b30; color: rgba(255,255,255,.96); font: 600 11px/1 -apple-system, BlinkMacSystemFont, sans-serif; box-shadow: 0 1px 2px rgba(0,0,0,.28); }
 
 .feature-list { padding: 70px clamp(24px, 8vw, 140px) 130px; }
 .feature-list > .section-number { padding-bottom: 48px; border-bottom: 1px solid var(--line); }
@@ -135,6 +146,7 @@ kbd > span { width: 100%; display: flex; align-items: center; justify-content: c
 footer { min-height: 110px; padding: 0 clamp(24px, 4vw, 68px); display: flex; align-items: center; justify-content: space-between; gap: 24px; color: #6d7069; border-top: 1px solid var(--line); font-size: 11px; }.footer .wordmark, footer .wordmark { color: var(--paper); }
 
 @keyframes enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes sprite-arrive { from { opacity: 0; transform: scale(.92); } to { opacity: 1; transform: scale(1); } }
 
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; align-content: center; padding-top: 118px; padding-bottom: 80px; }
@@ -151,7 +163,7 @@ footer { min-height: 110px; padding: 0 clamp(24px, 4vw, 68px); display: flex; al
   .hero-art { position: relative; width: 112vw; right: auto; bottom: auto; align-self: center; margin: 28px -28vw -10px -16vw; opacity: 1; }.hero-actions { align-items: stretch; }.button { width: 100%; }.compatibility { text-align: center; margin-left: 0; }
   .hero-shortcut { margin-bottom: 24px; }.hero-shortcut kbd { width: 33px; min-width: 33px; height: 33px; }
   .how { min-height: 700px; padding: 80px 22px; }.how-copy { padding: 70px 0; }.display-line { font-size: 45px; }.display-line-with-shortcut { gap: 15px; }.display-line-with-shortcut .shortcut { transform: none; }.display-line-with-shortcut kbd { width: 36px; min-width: 36px; height: 36px; border-radius: 8px; border-bottom-width: 3px; font-size: 16px; }
-  .product-proof { padding: 90px 22px; gap: 55px; }.proof-copy h2 { font-size: 54px; }.menu-preview { height: 475px; }.status-menu { width: min(318px, calc(100vw - 44px)); right: 0; }.menubar { margin-left: -115px; width: calc(100% + 115px); }.menubar-left span:not(.apple-mark) { display: none; }
+  .product-proof { padding: 90px 22px; gap: 55px; }.proof-copy h2 { font-size: 54px; }.menu-preview { height: 500px; }.status-menu { width: min(318px, calc(100vw - 44px)); right: 0; }.menubar { width: 100%; padding-inline: 13px; }.menubar-left span:not(.apple-mark) { display: none; }
   .feature-list { padding: 50px 22px 90px; }.feature-row { grid-template-columns: 28px 1fr; gap: 13px; }.feature-row h3 { font-size: 30px; }.feature-row p:last-child { grid-column: 2; }
   .final-cta { min-height: 760px; padding: 95px 22px; }.final-cta h2 { font-size: 82px; }.final-actions { width: 100%; }.text-link { margin: 8px 0 0; }
   footer { padding: 28px 22px; flex-wrap: wrap; }footer p { margin: 0; }

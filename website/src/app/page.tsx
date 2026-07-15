@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { MenuDemo } from "@/components/MenuDemo";
 
 const githubUrl = "https://github.com/arisabogal/InsomniMac";
 
@@ -22,54 +23,6 @@ function Shortcut({ className = "" }: { className?: string }) {
   return (
     <div className={`shortcut ${className}`.trim()} aria-label="Default keyboard shortcut Command Shift Backslash">
       <kbd><span>⌘</span></kbd><kbd><span>⇧</span></kbd><kbd><span>{"\\"}</span></kbd>
-    </div>
-  );
-}
-
-function LockIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 16 16" fill="currentColor">
-      <path d="M4.75 6V4.8a3.25 3.25 0 0 1 6.5 0V6h.35c.77 0 1.4.63 1.4 1.4v5.2c0 .77-.63 1.4-1.4 1.4H4.4A1.4 1.4 0 0 1 3 12.6V7.4C3 6.63 3.63 6 4.4 6h.35Zm1.5 0h3.5V4.8a1.75 1.75 0 1 0-3.5 0V6Z" />
-    </svg>
-  );
-}
-
-function MenuPreview() {
-  return (
-    <div className="menu-preview" aria-label="Preview of the InsomniMac menu bar app">
-      <div className="menubar">
-        <div className="menubar-left">
-          <span className="apple-mark" aria-hidden="true">●</span>
-          <strong>Finder</strong>
-          <span>File</span>
-          <span>Edit</span>
-          <span>View</span>
-          <span>Go</span>
-          <span>Window</span>
-          <span>Help</span>
-        </div>
-        <div className="menubar-right">
-          <span className="system-icon" aria-hidden="true">◖</span>
-          <span className="active-lock"><LockIcon /></span>
-          <span>Wed Jul 15&nbsp;&nbsp;12:34 AM</span>
-        </div>
-      </div>
-      <div className="status-menu">
-        <div className="menu-status">
-          <span className="live-dot" />
-          Awake Lock Active
-        </div>
-        <div className="menu-meta">Hotkey: ⌘ ⇧ {"\\"}</div>
-        <div className="menu-rule" />
-        <div className="menu-row">Exit Awake Lock <span>⌘⇧{"\\"}</span></div>
-        <div className="menu-row">Set Shortcut</div>
-        <div className="menu-row check"><span>✓</span> Open at Login</div>
-        <div className="menu-row check"><span>✓</span> Show Overlay When Active</div>
-        <div className="menu-row check"><span /> Prevent Sleep When Lid Closes</div>
-        <div className="menu-row check"><span>✓</span> Share Remote Mode with Agents</div>
-        <div className="menu-rule" />
-        <div className="menu-row">Quit InsomniMac</div>
-      </div>
     </div>
   );
 }
@@ -150,7 +103,7 @@ export default function Home() {
             See the connection-safe state at a glance, set a shortcut, and let InsomniMac start with your Mac.
           </p>
         </div>
-        <MenuPreview />
+        <MenuDemo />
       </section>
 
       <section className="feature-list" aria-label="Features">
