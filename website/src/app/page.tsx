@@ -21,7 +21,7 @@ function GitHubIcon() {
 function Shortcut({ className = "" }: { className?: string }) {
   return (
     <div className={`shortcut ${className}`.trim()} aria-label="Default keyboard shortcut Command Shift Backslash">
-      <kbd>⌘</kbd><kbd>⇧</kbd><kbd>{"\\"}</kbd>
+      <kbd><span>⌘</span></kbd><kbd><span>⇧</span></kbd><kbd><span>{"\\"}</span></kbd>
     </div>
   );
 }

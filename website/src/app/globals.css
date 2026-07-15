@@ -90,6 +90,7 @@ nav a:hover { color: #fff; }
 .display-line.muted { color: #b4b6ae; }
 .display-line-with-shortcut { display: flex; align-items: center; gap: clamp(18px, 2.5vw, 42px); flex-wrap: wrap; }
 .display-line-with-shortcut .shortcut { transform: translateY(4px); }
+.display-line-with-shortcut kbd > span { transform: translateX(-1px); }
 .shortcut { display: flex; gap: 9px; }
 kbd { min-width: 62px; height: 62px; display: grid; place-items: center; border: 1px solid #c9cbc3; border-bottom-width: 4px; border-radius: 12px; background: #e8e8e2; font: 22px var(--font-geist), sans-serif; box-shadow: 0 10px 22px rgba(0,0,0,.07); transition: transform 160ms ease, border-bottom-width 160ms ease; }
 .shortcut:hover kbd { transform: translateY(2px); border-bottom-width: 2px; }
